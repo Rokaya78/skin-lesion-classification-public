@@ -1,0 +1,16 @@
+Feature extraction using MobileNetV2 significantly improved performance compared to the baseline CNN.
+
+The model achieved 63.85% accuracy and a macro F1 score of 0.46, representing a substantial improvement over Week 1 (51% accuracy, 0.26 macro F1). This demonstrates the effectiveness of leveraging pretrained ImageNet features.
+
+Performance improved across most classes, particularly:
+- bkl: F1 increased from very low values (~0.09) to 0.50
+- vasc: improved from 0.00 to 0.53
+- overall macro F1 nearly doubled
+
+The model still performs best on the majority class (nv: F1 = 0.80), but minority classes are now better represented.
+
+Confusion between bkl and mel remains a challenge:
+- 19.8% of melanoma cases are misclassified as benign keratosis (clinically dangerous)
+- However, confusion is more balanced compared to Week 1
+
+Overall, feature extraction provides faster convergence and significantly better generalization than training from scratch, highlighting the importance of transfer learning for medical imaging tasks.
