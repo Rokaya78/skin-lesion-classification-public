@@ -1,0 +1,7 @@
+Baseline CNN achieved ~51% accuracy and macro F1 of 0.26.
+The model performed well on the majority class (nv) but struggled on minority classes such as bkl and vasc.
+
+Significant confusion exists between bkl and mel, with many benign lesions misclassified as melanoma.
+This reflects the difficulty of distinguishing visually similar skin conditions.
+
+The results highlight the limitations of training from scratch on an imbalanced dataset and motivate the use of transfer learning in later stages.
