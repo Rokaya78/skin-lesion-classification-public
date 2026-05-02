@@ -1,0 +1,9 @@
+Progressive unfreezing improved performance compared to both the baseline CNN and feature extraction.
+
+The model achieved 73.05% accuracy and a macro F1 score of 0.62, showing a clear improvement over Week 2.
+
+The model performed well across most classes, including minority classes, and achieved strong performance on the majority class (nv).
+
+Confusion between bkl and mel was reduced compared to previous weeks, improving reliability of predictions.
+
+These results show that allowing deeper layers of the pretrained model to adapt leads to better performance than keeping the backbone frozen.
