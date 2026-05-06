@@ -1,0 +1,6 @@
+Accuracy: 70.60%
+Macro F1: 0.6071
+Weighted F1: 0.7317
+Precision: 0.5461
+Recall: 0.7268
+AUC: 0.9450

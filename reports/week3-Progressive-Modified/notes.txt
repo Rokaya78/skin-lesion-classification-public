@@ -1,0 +1,9 @@
+Progressive unfreezing achieved strong overall performance while maintaining balanced classification across classes.
+
+The model reached 70.60% accuracy and a macro F1 score of 0.61. Compared to earlier experiments, minority classes and clinically important classes such as melanoma showed significant improvement.
+
+The modified progressive schedule prevented aggressive late-stage unfreezing, resulting in more stable training behavior and reduced overfitting risk.
+
+Although overall accuracy was slightly lower than the previous progressive experiment, macro F1 remained high, indicating balanced performance across lesion categories.
+
+The results confirm that controlled adaptation of pretrained features improves medical image classification performance compared to feature extraction alone.
