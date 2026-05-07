@@ -1,0 +1,90 @@
+{
+  "strategy": "full_finetune",
+  "accuracy": 0.6365,
+  "macro_f1": 0.6519,
+  "weighted_f1": 0.6682,
+  "macro_precision": 0.6063,
+  "macro_recall": 0.7855,
+  "auc_ovr": 0.9551,
+  "per_class_f1": {
+    "akiec": 0.6618,
+    "bcc": 0.7344,
+    "bkl": 0.6353,
+    "df": 0.6071,
+    "mel": 0.4289,
+    "nv": 0.707,
+    "vasc": 0.7887
+  },
+  "bkl_mel_confusion": {
+    "mel_misclassified_as_bkl": 19,
+    "mel_misclassified_as_bkl_pct": 8.6,
+    "bkl_misclassified_as_mel": 33,
+    "bkl_misclassified_as_mel_pct": 15.1,
+    "note": "mel\u2192bkl errors are clinically dangerous (missed melanoma). bkl\u2192mel errors cause unnecessary procedures."
+  },
+  "confusion_matrix": [
+    [
+      45,
+      9,
+      6,
+      0,
+      5,
+      0,
+      0
+    ],
+    [
+      2,
+      94,
+      4,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      11,
+      8,
+      162,
+      2,
+      33,
+      3,
+      0
+    ],
+    [
+      2,
+      3,
+      0,
+      17,
+      1,
+      0,
+      0
+    ],
+    [
+      2,
+      7,
+      19,
+      0,
+      190,
+      4,
+      0
+    ],
+    [
+      9,
+      33,
+      100,
+      14,
+      433,
+      737,
+      15
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      28
+    ]
+  ]
+}

@@ -1,0 +1,11 @@
+Full fine-tuning achieved the highest macro F1 score among all experiments.
+
+The model reached 63.65% accuracy and a macro F1 score of 0.6519, showing strong balanced performance across classes, especially minority lesion categories.
+
+Compared to progressive unfreezing, full fine-tuning improved class balance and minority-class recognition but reduced overall accuracy and melanoma performance.
+
+Training all backbone layers allowed deeper adaptation to the HAM10000 dataset, resulting in strong performance for rare classes such as akiec, bcc, df, and vasc.
+
+The experiment also showed higher risk of overfitting, as training accuracy became significantly higher than validation accuracy during later epochs.
+
+Overall, full fine-tuning provided the best balanced multi-class performance, while progressive unfreezing remained the best overall classifier in terms of accuracy and melanoma safety.
