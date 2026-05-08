@@ -1,0 +1,31 @@
+Baseline CNN:
+  Accuracy: 0.5120
+  Macro F1: 0.2655
+  Weighted F1: 0.5491
+  Precision: 0.2726
+  Recall: 0.3610
+  AUC: 0.8116
+
+Feature Extraction:
+  Accuracy: 0.6385
+  Macro F1: 0.4639
+  Weighted F1: 0.6767
+  Precision: 0.4148
+  Recall: 0.6371
+  AUC: 0.8990
+
+Progressive Unfreezing:
+  Accuracy: 0.7060
+  Macro F1: 0.6071
+  Weighted F1: 0.7317
+  Precision: 0.5461
+  Recall: 0.7268
+  AUC: 0.9450
+
+Full Fine-Tuning:
+  Accuracy: 0.6365
+  Macro F1: 0.6519
+  Weighted F1: 0.6682
+  Precision: 0.6063
+  Recall: 0.7855
+  AUC: 0.9551

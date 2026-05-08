@@ -1,0 +1,83 @@
+Week 4 focused on comparing all transfer learning strategies and analyzing the tradeoffs between overall accuracy, balanced multi-class performance, and medically important classification behavior.
+
+1. Baseline CNN (Training from Scratch)
+------------------------------------------------
+The baseline CNN achieved the weakest performance across nearly all metrics:
+- Accuracy: 51.20%
+- Macro F1: 0.2655
+- AUC: 0.8116
+
+These results demonstrate the difficulty of learning robust medical image features from scratch using a relatively small dataset. Although the baseline model achieved the lowest melanoma-to-bkl dangerous confusion rate (5.9%), overall classification quality and minority-class performance were poor.
+
+The baseline experiment established an important reference point showing that pretrained representations are essential for strong skin lesion classification performance.
+
+2. Feature Extraction (Frozen Backbone)
+------------------------------------------------
+Feature extraction using a pretrained MobileNetV2 backbone significantly improved performance:
+- Accuracy increased to 63.85%
+- Macro F1 increased to 0.4639
+- AUC increased to 0.8990
+
+This confirms that pretrained ImageNet features transfer effectively to medical imaging tasks.
+
+However, although overall classification improved substantially, melanoma-to-bkl dangerous confusion increased to 19.8%, indicating that the frozen backbone was not sufficiently adapted to distinguish clinically similar lesion categories.
+
+3. Progressive Unfreezing
+------------------------------------------------
+Progressive unfreezing produced the best overall classification performance:
+- Accuracy: 70.60%
+- Weighted F1: 0.7317
+- Macro F1: 0.6071
+- AUC: 0.9450
+
+Gradually unfreezing deeper backbone layers allowed the model to adapt pretrained features to the HAM10000 dataset while preserving training stability.
+
+This strategy achieved the strongest balance between:
+- overall accuracy
+- generalization
+- minority-class recognition
+- stable training behavior
+
+The experiment demonstrated that controlled adaptation of pretrained representations is highly effective for medical image classification.
+
+Progressive unfreezing also significantly improved clinically important classes such as melanoma and reduced dangerous melanoma confusion compared to feature extraction.
+
+4. Full Fine-Tuning
+------------------------------------------------
+Full fine-tuning achieved the highest balanced multi-class performance:
+- Macro F1: 0.6519
+- AUC: 0.9551
+- Recall: 0.7855
+
+Allowing all backbone layers to train enabled deeper specialization to the dataset and produced strong minority-class performance across classes such as:
+- akiec
+- bcc
+- df
+- vasc
+
+However, full fine-tuning also showed stronger overfitting behavior:
+- training accuracy became much higher than validation accuracy
+- overall accuracy decreased compared to progressive unfreezing
+
+Additionally, melanoma performance was slightly weaker than progressive unfreezing, indicating that aggressive adaptation may reduce some clinically important generalization capabilities.
+
+5. Overall Conclusions
+------------------------------------------------
+The experiments clearly demonstrate the importance of transfer learning for skin lesion classification.
+
+Main findings:
+- Training from scratch is insufficient for robust medical image classification.
+- Feature extraction provides major performance improvements using pretrained representations.
+- Progressive unfreezing offers the best balance between stability and overall classification quality.
+- Full fine-tuning achieves the strongest balanced class performance but introduces greater overfitting risk.
+
+From a practical perspective:
+- Progressive unfreezing is the best overall classifier.
+- Full fine-tuning is the best balanced classifier.
+
+The project successfully demonstrates how different transfer learning strategies affect:
+- accuracy
+- class balance
+- minority-class recognition
+- overfitting behavior
+- clinically important prediction safety.
